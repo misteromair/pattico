@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="text-align: center; margin-bottom: 2rem;">Exclusive Men's Collection</h1>
+    <div class="product-grid">
+        {% for product in products %}
+        <div class="product-card">
+            <!-- Leave the src empty, attach your images here -->
+            <img src="" alt="{{ product.name }}" class="product-image">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <h3 style="color: var(--white);">${{ "%.2f"|format(product.price) }}</h3>
+            
+            <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="POST">
+                <button type="submit" class="btn btn-large">Add to Cart</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

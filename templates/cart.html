@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Your Shopping Cart</h1>
+    
+    {% if products %}
+        <div style="background: var(--dark-grey); padding: 2rem; border: 1px solid #333;">
+            {% for product in products %}
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #333; padding: 10px 0;">
+                    <span>{{ product.name }}</span>
+                    <span>${{ "%.2f"|format(product.price) }}</span>
+                </div>
+            {% endfor %}
+            
+            <div style="display: flex; justify-content: space-between; margin-top: 20px; font-size: 1.5rem; color: var(--gold);">
+                <strong>Total:</strong>
+                <strong>${{ "%.2f"|format(total) }}</strong>
+            </div>
+
+            <form action="{{ url_for('checkout') }}" method="POST" style="margin-top: 2rem; text-align: right;">
+                <button type="submit" class="btn">Proceed to Checkout</button>
+            </form>
+        </div>
+    {% else %}
+        <p>Your cart is currently empty.</p>
+        <a href="{{ url_for('index') }}" class="btn">Continue Shopping</a>
+    {% endif %}
+{% endblock %}

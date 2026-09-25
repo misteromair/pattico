@@ -1,0 +1,115 @@
+:root {
+    --gold: #D4AF37;
+    --black: #0F0F0F;
+    --dark-grey: #1A1A1A;
+    --white: #F5F5F5;
+}
+
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* Typography & Links */
+h1, h2, h3 { color: var(--gold); font-weight: normal; }
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--white); }
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-grey);
+    padding: 1rem 5%;
+    border-bottom: 2px solid var(--gold);
+}
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.nav-links a {
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
+/* Flash Messages */
+.flash-messages { padding: 1rem 5%; text-align: center; }
+.flash { padding: 10px; margin-bottom: 10px; border: 1px solid var(--gold); background: var(--dark-grey); }
+
+/* Main Content Container */
+.container { padding: 2rem 5%; }
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--dark-grey);
+    border: 1px solid #333;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+/* Image Placeholder (As requested, empty for you to fill) */
+.product-image {
+    width: 100%;
+    height: 300px;
+    background-color: #222;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--gold);
+    object-fit: cover;
+}
+
+/* Buttons */
+.btn {
+    background-color: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.btn:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+.btn-large { width: 100%; margin-top: 10px; }
+
+/* Dashboard Cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.stat-card {
+    background: var(--dark-grey);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--gold);
+}
+.stat-card h3 { font-size: 2.5rem; margin: 10px 0; color: var(--white); }
+.stat-card p { color: var(--gold); text-transform: uppercase; font-size: 0.9rem;}
+
+/* Forms */
+.form-group { margin-bottom: 1rem; }
+.form-control {
+    width: 100%; padding: 10px;
+    background: var(--black); color: var(--white);
+    border: 1px solid var(--gold);
+}

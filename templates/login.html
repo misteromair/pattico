@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="max-width: 400px; margin: 0 auto; background: var(--dark-grey); padding: 2rem; border: 1px solid var(--gold);">
+        <h2 style="text-align: center;">Employee Login</h2>
+        <form method="POST" action="{{ url_for('login') }}">
+            <div class="form-group">
+                <label style="color: var(--gold);">Access Password</label><br><br>
+                <input type="password" name="password" class="form-control" required placeholder="Enter password (hint: gold123)">
+            </div>
+            <button type="submit" class="btn btn-large">Authenticate</button>
+        </form>
+    </div>
+{% endblock %}

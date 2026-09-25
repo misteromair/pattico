@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>Employee Dashboard</h1>
+        <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+    </div>
+    
+    <p style="margin-bottom: 2rem;">Real-time performance metrics for Profumi Maschili.</p>
+
+    <div class="dashboard-grid">
+        <div class="stat-card">
+            <p>Total Page Clicks</p>
+            <h3>{{ stats.clicks }}</h3>
+        </div>
+        <div class="stat-card">
+            <p>Items Added to Cart</p>
+            <h3>{{ stats.add_to_carts }}</h3>
+        </div>
+        <div class="stat-card">
+            <p>Total Sales</p>
+            <h3>{{ stats.sales }}</h3>
+        </div>
+        <div class="stat-card">
+            <p>Employee Logins</p>
+            <h3>{{ stats.employee_logins }}</h3>
+        </div>
+    </div>
+{% endblock %}
